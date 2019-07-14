@@ -25,14 +25,11 @@ context('Actions', () => {
 	cy.get(':nth-child(1) > .download').click();
 	//Elemento que contiene los datos
 	//cy.get('.table.table-condensed.resultTable.dt.table-huedatatable');*/
-	//alert("Hola");
-	//readTextFile("");
-	var fs = require('fs');
-	var textByLine = fs.readFileSync('file:///C:/Users/brian/Downloads/query-hive-62225.csv').toString().split("\n");
 	
-	
-  
-	//cy.readFile('C:\Users\brian\Downloads\query-hive-62225.csv');
+	cy.readFile('../../Downloads/query-hive-62225.csv').then((data) => {
+		console.log(data.split('\n')[1000])
+	})
+	//Falta el nombre del archivo que es variable
 	
   })
 })
